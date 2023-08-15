@@ -30,6 +30,11 @@ sudo systemctl start jenkins
 sudo systemctl enable jenkins
 sleep 3
 
+#Firewall set up
+echo "=====> [6]: Ajust Firewall ...."
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+sudo firewall-cmd --reload
+
 # Display initial Jenkins admin password
 echo "Wait a moment for Jenkins to initialize..."
 sleep 30 # Wait for Jenkins to initialize (adjust as needed)
