@@ -32,6 +32,9 @@ sleep 3
 
 #Firewall set up
 echo "=====> [6]: Ajust Firewall ...."
+sudo systemctl status firewalld
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
 sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
 sudo firewall-cmd --reload
 
